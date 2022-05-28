@@ -1,0 +1,8 @@
+.calculadora{
+	display: grid;
+	position: relative;
+	background-color: black;
+	height: 200px;
+	width: 80%;
+	margin: 0 auto;
+}
