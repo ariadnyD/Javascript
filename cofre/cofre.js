@@ -3,14 +3,18 @@ function validar (){
 	var inputsenha = tagsenha.value;
 	if(regra_1(inputsenha) === true){
 		if (regra_2(inputsenha) === true){
-			if(regra_4(inputsenha)===true){
-				if (regra_5(inputsenha)===true) {
-					alert("Sua senha foi registrada!")
-				}else{
-					alert("Deve conter no mínimo dois número algébricos")
-				}
+			if (regra_3(inputsenha) === true) {
+				if(regra_4(inputsenha)===true){
+				    if (regra_5(inputsenha)===true) {
+			            alert("Sua senha foi registrada!")
+				    }else{
+					    alert("Deve conter no mínimo dois número algébricos")
+				    }
+			    }else{
+			    	alert("Deve conter no mínimo uma letra maiúscula e outra minúscula")
+			    }
 			}else{
-				alert("Deve conter no mínimo uma letra maiúscula e outra minúscula")
+				alert("Deve conter no mínimo dois desses caracteres !,@,#,$")
 			}
 		}else{
 			alert("Deve começar com uma letra(maiúscula ou minúscula)")
@@ -35,23 +39,16 @@ function regra_2(senha){
 		return false
 	}
 }
-/*function regra_3(senha){
-	var aux=0;
+function regra_3(senha){
 	var exp2 = /\!|\@|\#|\$/ig
-	for (var i = senha.length - 1; i >= 0; i--) {
-		if(exp2.test(senha[i])){
-		    aux = aux+1;
-	    }
-	}
-	console.log(aux)
-	if (aux == 2) {
-	    return true
-	
-	}else{
+	var resultado = senha.match(exp2)
+	if (resultado === null) {
 	    return false
+	}else if (resultado.length >= 2){
+	    return true
+	} else{
 	}
 }
-*/
 function regra_4(senha){
 	var maius = /[A-Z]/
 	var min = /[a-z]/
@@ -65,9 +62,8 @@ function regra_4(senha){
 	return false
 }
 function regra_5(senha){
-	var num = /d{2}/ig
-	console.log(num.teste(senha))
-	if(num.test(senha)){
+	var num = /\d{2}/g
+	if(num.test(senha) === true){
 		return true
 	}else{
 		return false
