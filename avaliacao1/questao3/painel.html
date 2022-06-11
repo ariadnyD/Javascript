@@ -6,15 +6,20 @@
 	<style type="text/css">
 		.pa{
 			width: 100px;
-			height: 50px;		}
+			height: 50px;	
+			border: 1px solid black;
+
+		}
 	</style>
 </head>
-<body>
-	<div class="pa" style="width: 100px; height: 50px;"></div>
-	<div class="pa" style="width: 100px; height: 50px;"></div>
-	<div class="pa" style="width: 100px; height: 50px;"></div>
-	<div class="pa" style="width: 100px; height: 50px;"></div>
-	<div class="pa" style="width: 100px; height: 50px;"></div>
-	<div class="pa" style="width: 100px; height: 50px;"></div>
+<body onload="gerar()">
+	<div id="painel_cores">
+	<div class="pa" onclick="fundo(0)" style="width: 100px; height: 50px;"></div>
+	<div class="pa" onclick="fundo(1)" style="width: 100px; height: 50px;"></div>
+	<div class="pa" onclick="fundo(2)" style="width: 100px; height: 50px;"></div>
+	<div class="pa" onclick="fundo(3)" style="width: 100px; height: 50px;"></div>
+	<div class="pa" onclick="fundo(4)" style="width: 100px; height: 50px;"></div>
+	<div class="pa" onclick="fundo(5)" style="width: 100px; height: 50px;"></div>
+	</div>
 </body>
 </html>

@@ -1,16 +1,16 @@
-function cor(){
-	var n = Math.floor(Math.random() * 256);
-	return n;
-}
 function gerar(){
-	red_aleatorio = cor('')
-	green_aleatorio = cor('')
-	blue_aleatorio = cor('')
-
-	cor = "rgb(" + red_aleatorio +"," + green_aleatorio + "," + blue_aleatorio + ")";
 	div = document.getElementsByClassName('pa')
-	for (var i = 6; i >= 1; i--) {
+	for(i=0; i<div.length; i++){
+		red_aleatorio = Math.floor(Math.random() * 256)
+	    green_aleatorio = Math.floor(Math.random() * 256)
+	    blue_aleatorio = Math.floor(Math.random() * 256)
+
+	    cor = "rgb(" + red_aleatorio +", " + green_aleatorio + ", " + blue_aleatorio + ")";
+	    console.log(cor)
+
 		div[i].style.backgroundColor = cor
-	}
+	}	
+}
+function fundo(){
 	
 }
